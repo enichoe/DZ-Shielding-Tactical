@@ -18,9 +18,16 @@
             <a class="navbar-brand" href="index.html">
                 <img src="logo.jpeg" alt="DZ Shielding Tactical Perú Logo">
             </a>
+            <!-- Cart Icon for Mobile -->
+            <a href="carrito.html" class="btn btn-outline-light ms-2 d-lg-none">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge bg-primary" id="cart-count">0</span>
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -39,8 +46,11 @@
                         <a class="nav-link" href="index.html#contact">Contacto</a>
                     </li>
                 </ul>
-                <a href="carrito.html" class="btn btn-outline-light ms-3">
-                    <i class="fas fa-shopping-cart"></i> Carrito <span class="badge bg-primary" id="cart-count">0</span>
+                <!-- Cart Button for Desktop -->
+                <a href="carrito.html" class="btn btn-outline-light ms-lg-3 d-none d-lg-flex align-items-center">
+                    <i class="fas fa-shopping-cart me-1"></i>
+                    <span>Carrito</span>
+                    <span class="badge bg-primary ms-2" id="cart-count">0</span>
                 </a>
             </div>
         </div>
