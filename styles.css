@@ -1,0 +1,326 @@
+:root {
+            --dark-bg: #1a1a1a; /* Dark background from logo */
+            --light-silver: #c0c0c0; /* Silver from logo */
+            --accent-blue: #007bff; /* A subtle blue from the puma's eye, adjust as needed */
+            --text-color-light: #f8f9fa; /* Light text for dark backgrounds */
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--dark-bg);
+            color: var(--text-color-light);
+        }
+
+        /* --- Navbar Styles --- */
+        .navbar {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--light-silver);
+        }
+        .navbar-brand img {
+            height: 60px; /* Adjust logo height */
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-color-light) !important;
+            font-weight: 600;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--light-silver) !important;
+        }
+        .navbar-toggler {
+            border-color: var(--light-silver);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28192, 192, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: url('/img/img6.webp') no-repeat center center/cover;
+            color: var(--text-color-light);
+            text-align: center;
+            padding: 100px 0;
+            min-height: 70vh; /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden; /* For parallax or overlay effects */
+        }
+        #hero::before { /* Overlay for better text readability */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+        }
+        #hero .container {
+            z-index: 1; /* Ensure content is above overlay */
+        }
+        #hero h1 {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn-primary-custom {
+            background-color: var(--light-silver);
+            color: var(--dark-bg);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary-custom:hover {
+            background-color: var(--accent-blue);
+            color: var(--text-color-light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Section Styling (General) --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--light-silver);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        /* --- Card Styles (e.g., for Product Categories) --- */
+        .card-custom {
+            background-color: #2b2b2b; /* Slightly lighter dark for cards */
+            border: 1px solid var(--light-silver);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            height: 100%; /* Ensure uniform height in rows */
+        }
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        .card-custom img {
+            max-height: 200px; /* Example height */
+            object-fit: contain; /* Change from 'cover' to 'contain' to show the full image */
+            width: 100%;
+            background-color: #111; /* Add a dark background for any empty space */
+        }
+        .card-custom .card-body {
+            padding: 25px;
+            color: var(--text-color-light);
+        }
+        .card-custom .card-title {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--light-silver);
+        }
+        .card-custom .card-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* --- WhatsApp Floating Button --- */
+        #whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            animation: pulse 2s infinite; /* Animation */
+            text-decoration: none; /* Remove underline from link */
+        }
+        #whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+        }
+
+        /* --- Cart Page --- */
+        #cart-page .cart-item {
+            background-color: #2b2b2b;
+            border: 1px solid var(--light-silver);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #111111; /* Even darker for footer */
+            color: var(--text-color-light);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--light-silver);
+        }
+        footer .social-icons a {
+            color: var(--text-color-light);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        footer .social-icons a:hover {
+            color: var(--accent-blue);
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        footer ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: var(--text-color-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .navbar-brand img {
+                height: 50px;
+            }
+        }
+        @media (max-width: 576px) {
+            #hero h1 {
+                font-size: 2rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .section-padding {
+                padding: 50px 0;
+            }
+            #whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* --- Mobile Cart Table Adjustments --- */
+        @media (max-width: 768px) {
+            #cart-page table thead {
+                display: none; /* Hide table header on mobile */
+            }
+            #cart-page table, 
+            #cart-page table tbody, 
+            #cart-page table tr, 
+            #cart-page table td {
+                display: block;
+                width: 100%;
+            }
+            #cart-page table tr {
+                margin-bottom: 1rem;
+                border: 1px solid var(--light-silver);
+                border-radius: 8px;
+                padding: 1rem;
+            }
+            #cart-page table td {
+                text-align: right; /* Align text to the right */
+                padding-left: 50%; /* Create space for the label */
+                position: relative;
+                border: none;
+            }
+            #cart-page table td::before {
+                content: attr(data-label); /* Use data-label for content */
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+            }
+            #cart-page table td:nth-of-type(1) {
+                text-align: left;
+                padding-left: 0;
+            }
+             #cart-page table td:nth-of-type(1)::before {
+                content: ''; /* No label for the product image/name */
+            }
+            #cart-page table td:nth-of-type(2)::before {
+                content: 'Cantidad:';
+            }
+            #cart-page table td:nth-of-type(3)::before {
+                content: 'Subtotal:';
+            }
+            #cart-page table td:nth-of-type(4) {
+                text-align: center;
+                padding: 1rem 0 0 0;
+            }
+            #cart-page table td:nth-of-type(4)::before {
+                content: ''; /* No label for the remove button */
+            }
+            #cart-page .input-group {
+                margin: 0 0 0 auto; /* Align quantity input to the right */
+            }
+            #cart-page .d-flex.justify-content-between {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            #cart-page .text-end {
+                text-align: center !important;
+            }
+        }
